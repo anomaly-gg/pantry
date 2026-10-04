@@ -10,6 +10,7 @@ function aiPrompt(state) {
   return [
     "Suggest 5 recipes I can cook with what I have at home. I cook for " + plural(p.servings, "person", "people") + " and like " + style + ".",
     shop + " Use the items marked [use soon] first. No oven.",
+    lunchCoversDinner(p) ? "We cook breakfast and lunch only. Lunch is cooked big enough to also be dinner, so lunch dishes must keep well for a few hours and reheat well." : "",
     "",
     "My pantry:",
     ...lines,

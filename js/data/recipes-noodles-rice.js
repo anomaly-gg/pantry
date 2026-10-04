@@ -22,7 +22,7 @@ recipe({
   ],
 });
 recipe({
-  id: "chicken-sotanghon", name: "Chicken sotanghon soup", style: "filipino", slots: "LD", min: 35, tags: "soup comfort",
+  id: "chicken-sotanghon", name: "Chicken sotanghon soup", style: "filipino", slots: "LD", min: 35, tags: "soup comfort nokeep",
   ing: ["sotanghon 1 | 1 bundle, soaked", "chicken 400g | pieces", "carrot 1? | strips", "cabbage 0.25? | shredded", "spring-onion?", "onion | 1", "garlic | 5 cloves", "fish-sauce | 2 tbsp", "water | 6 cups", "oil | 1 tbsp"],
   steps: [
     "Sauté garlic and onion. Add chicken and fish sauce and cook 5 minutes.",
@@ -32,7 +32,7 @@ recipe({
   ],
 });
 recipe({
-  id: "misua-egg-soup", name: "Misua soup with egg", style: "filipino", slots: "BLD", min: 15, tags: "soup cheap comfort",
+  id: "misua-egg-soup", name: "Misua soup with egg", style: "filipino", slots: "BLD", min: 15, tags: "soup cheap comfort nokeep",
   ing: ["misua 1", "eggs 2 | beaten", "ground-pork 150g? | or chopped shrimp", "sayote 1? | or patola, sliced", "onion | 1", "garlic | 3 cloves", "fish-sauce | 1 tbsp", "water | 5 cups", "oil | 1 tbsp"],
   steps: [
     "Sauté garlic and onion. Add the pork if using and cook through.",
@@ -42,7 +42,7 @@ recipe({
   ],
 });
 recipe({
-  id: "upgraded-instant-noodles", name: "Instant noodle soup with egg and greens", style: "asian", slots: "BLD", min: 10, tags: "soup cheap quick",
+  id: "upgraded-instant-noodles", name: "Instant noodle soup with egg and greens", style: "asian", slots: "BLD", min: 10, tags: "soup cheap quick nokeep",
   ing: ["instant-noodles 4", "eggs 4", "pechay 1? | or cabbage", "spring-onion?", "garlic? | 3 cloves, fried", "hotdog 2? | sliced", "water | 8 cups"],
   steps: [
     "Bring the water to a boil with the seasoning packets.",
@@ -52,7 +52,7 @@ recipe({
   ],
 });
 recipe({
-  id: "upgraded-canton", name: "Instant pancit canton with egg and veg", style: "filipino", slots: "BLD", min: 10, tags: "cheap kids",
+  id: "upgraded-canton", name: "Instant pancit canton with egg and veg", style: "filipino", slots: "BLD", min: 10, tags: "cheap kids nokeep",
   ing: ["instant-canton 4", "eggs 4", "cabbage 0.25? | shredded", "carrot 1? | grated", "hotdog 2? | sliced", "calamansi?", "water"],
   steps: [
     "Cook the noodles with the carrot and cabbage in boiling water 2 to 3 minutes. Drain.",
@@ -62,7 +62,7 @@ recipe({
   ],
 });
 recipe({
-  id: "instant-noodle-stirfry", name: "Stir-fried instant noodles", style: "asian", slots: "LD", min: 15, tags: "cheap",
+  id: "instant-noodle-stirfry", name: "Stir-fried instant noodles", style: "asian", slots: "LD", min: 15, tags: "cheap nokeep",
   ing: ["instant-noodles 4 | use 2 seasoning packets", "cabbage 0.25 | sliced", "carrot 1? | strips", "eggs 2", "luncheon-meat 0.5? | strips, or any leftover meat", "garlic | 3 cloves", "soy-sauce | 1 tbsp", "oyster-sauce? | 1 tbsp", "oil | 2 tbsp"],
   steps: [
     "Boil the noodles 2 minutes, drain and toss with a little oil.",
@@ -74,7 +74,7 @@ recipe({
 
 /* ---- Pasta ---- */
 recipe({
-  id: "filipino-spaghetti", name: "Filipino spaghetti", style: "filipino", slots: "LD", min: 40, tags: "kids comfort",
+  id: "filipino-spaghetti", name: "Filipino spaghetti", style: "filipino", slots: "LD", min: 40, tags: "kids comfort keeps",
   ing: ["spaghetti 500g", "tomato-sauce 2 | 1 kg sweet-style spaghetti sauce, or 2 packs tomato sauce", "ground-pork 300g | or ground beef", "hotdog 4 | sliced", "ketchup | 1/2 cup banana ketchup", "sugar | 2 tbsp", "cheese | grated", "onion | 1", "garlic | 4 cloves", "oil | 1 tbsp", "salt"],
   steps: [
     "Cook the spaghetti in salted water and drain.",
@@ -94,7 +94,7 @@ recipe({
   ],
 });
 recipe({
-  id: "aglio-olio", name: "Garlic and chili pasta (aglio olio)", style: "western", slots: "LD", min: 15, tags: "cheap quick onepot",
+  id: "aglio-olio", name: "Garlic and chili pasta (aglio olio)", style: "western", slots: "LD", min: 15, tags: "cheap quick onepot nokeep",
   ing: ["spaghetti 400g", "garlic | 1 head, sliced", "chili-flakes? | 1 tsp", "oil | 1/3 cup", "cheese? | grated", "salt", "pepper"],
   steps: [
     "Cook pasta in well-salted water. Save 1 cup of the water before draining.",
@@ -104,7 +104,7 @@ recipe({
   ],
 });
 recipe({
-  id: "meat-sauce-pasta", name: "Meat sauce pasta (not sweet)", style: "western", slots: "LD", min: 40, tags: "kids comfort",
+  id: "meat-sauce-pasta", name: "Meat sauce pasta (not sweet)", style: "western", slots: "LD", min: 40, tags: "kids comfort keeps",
   ing: ["spaghetti 500g", "ground-beef 400g | or ground pork", "tomato-sauce 2 | 2 packs, or 6 chopped tomatoes", "carrot 1? | grated", "onion | 1", "garlic | 5 cloves", "cheese? | grated", "sugar | 1 tsp", "oil | 1 tbsp", "salt", "pepper"],
   steps: [
     "Cook pasta and drain.",
@@ -124,7 +124,7 @@ recipe({
   ],
 });
 recipe({
-  id: "garlic-noodles", name: "Garlic butter noodles", style: "asian", slots: "LD", min: 15, tags: "kids quick",
+  id: "garlic-noodles", name: "Garlic butter noodles", style: "asian", slots: "LD", min: 15, tags: "kids quick nokeep",
   ing: ["spaghetti 400g | or 4 packs instant noodles without seasoning", "butter | 4 tbsp", "garlic | 1 head, minced", "oyster-sauce | 2 tbsp", "soy-sauce | 1 tbsp", "sugar | 1 tsp", "cheese? | grated", "spring-onion?"],
   steps: [
     "Cook the noodles and drain.",
@@ -320,7 +320,7 @@ recipe({
   ],
 });
 recipe({
-  id: "tuna-melt", name: "Tuna melt", style: "western", slots: "BLD", min: 15, tags: "kids",
+  id: "tuna-melt", name: "Tuna melt", style: "western", slots: "BLD", min: 15, tags: "kids nokeep",
   ing: ["tuna 1", "bread 8", "cheese | slices or grated", "mayo | 2 tbsp", "onion | 2 tbsp chopped", "butter | for the pan"],
   steps: [
     "Mix tuna, mayonnaise and onion.",
@@ -329,7 +329,7 @@ recipe({
   ],
 });
 recipe({
-  id: "steamed-egg", name: "Chinese steamed egg", style: "asian", slots: "BLD", min: 20, tags: "ulam cheap healthy kids",
+  id: "steamed-egg", name: "Chinese steamed egg", style: "asian", slots: "BLD", min: 20, tags: "ulam cheap healthy kids nokeep",
   ing: ["eggs 4", "water | 1 1/2 cups warm", "soy-sauce | 1 tbsp", "sesame-oil? | 1 tsp", "spring-onion?", "salt | 1/2 tsp"],
   steps: [
     "Beat the eggs with salt, then stir in the warm water. Strain for a silky texture.",

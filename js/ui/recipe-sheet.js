@@ -2,7 +2,11 @@
    `meal` is set when opened from the week plan (cooking it ticks the meal off). */
 
 function openRecipe(r, meal) {
-  let servings = S.prefs.servings;
+  // from the plan: the portions it was planned for; otherwise lunch dishes default to lasting until dinner
+  const canDouble = !meal && lunchCoversDinner(S.prefs) && r.slots.includes("L");
+  // breakfast-time visits to a dish that also works for breakfast start at one meal
+  let twice = canDouble && !(r.slots.includes("B") && new Date().getHours() < 10);
+  let servings = meal ? mealPortions(meal, S.prefs) : S.prefs.servings * (twice ? 2 : 1);
   openSheet({ title: "", wide: true, build: body => {
     const st = recipeStatus(r, pantryAvail(S), servings);
     const haveKeys = new Set(st.have.map(n => n.key));
@@ -14,7 +18,14 @@ function openRecipe(r, meal) {
         h("span", null, icon("clock", 16), h("span", { class: "num", text: r.min + " min" })),
         h("span", { text: STYLE_LABEL[r.style] }),
         r.tagSet.has("soup") ? h("span", { text: "Soup" }) : null,
-        h("span", { class: "serves" }, icon("users", 16), stepper(servings, 1, 12, v => { servings = v; refreshSheets(); }, "People"))));
+        h("span", { class: "serves" }, icon("users", 16), stepper(servings, 1, 30, v => { servings = v; refreshSheets(); }, "People"))));
+
+    const forWhen = canDouble ? h("div", { class: "seg small-seg", role: "radiogroup", "aria-label": "How much to cook" },
+      [[false, "One meal"], [true, "Lunch + dinner"]].map(([v, label]) => h("label", null,
+        h("input", { type: "radio", name: "cookFor", checked: twice === v, onchange: () => { twice = v; servings = S.prefs.servings * (v ? 2 : 1); refreshSheets(); } }),
+        h("span", { text: label })))) : null;
+    const keepNote = (meal ? meal.portions > S.prefs.servings : twice) && r.tagSet.has("nokeep")
+      ? h("p", { class: "hint", text: "This one is best eaten fresh. For dinner, keep the extra in the fridge and reheat just before eating." }) : null;
 
     const status = st.missing.length
       ? h("div", { class: "recipe-status need" },
@@ -33,7 +44,7 @@ function openRecipe(r, meal) {
         h("span", { class: "mark", "aria-hidden": "true" }, haveKeys.has("rice") ? icon("check", 14) : icon("cart", 14)),
         h("span", { text: "Rice to serve (about " + formatAmt(RICE_PER_SERVING * servings, ING.rice) + " uncooked)" })) : null);
 
-    body.append(head, status,
+    appendAll(body, head, forWhen, keepNote, status,
       h("section", { class: "recipe-sec" }, h("h3", { class: "label", text: "Ingredients" }), ingList),
       h("section", { class: "recipe-sec" }, h("h3", { class: "label", text: "Steps" + (servings !== 4 ? " (written for 4; use the amounts above)" : "") }),
         h("ol", { class: "steps" }, r.steps.map(s => h("li", { text: s })))),

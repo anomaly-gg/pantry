@@ -3,7 +3,7 @@
 function openItemSheet(id) {
   openSheet({ title: "Edit item", build: body => {
     const it = S.items[id];
-    if (!it) { body.append(h("p", { class: "hint", text: "This item was removed." })); return; }
+    if (!it) { appendAll(body, h("p", { class: "hint", text: "This item was removed." })); return; }
     const name = h("input", { class: "field-input", id: "itemName", type: "text", value: it.name });
     const qty = h("input", { class: "field-input", id: "itemQty", type: "text", value: itemQtyText(it), placeholder: "e.g. 3 cans, 1 kg, half head" });
     const kind = h("select", { class: "field-input", id: "itemKind" },
@@ -19,7 +19,7 @@ function openItemSheet(id) {
     };
     kind.addEventListener("change", showUnit);
     showUnit();
-    body.append(
+    appendAll(body, 
       h("label", { class: "field" }, h("span", { class: "label", text: "Name" }), name),
       h("label", { class: "field" }, h("span", { class: "label", text: "Amount" }), qty),
       h("label", { class: "field" }, h("span", { class: "label", text: "Counts as" }), kind, unitHint),

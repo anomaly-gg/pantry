@@ -17,7 +17,7 @@ function openPrefs() {
         render();
       } }, ING[k].name)));
 
-    body.append(
+    appendAll(body, 
       h("div", { class: "pref" }, h("div", { class: "label", text: "People eating" }),
         stepper(p.servings, 1, 12, v => set({ servings: v }), "People eating")),
       h("div", { class: "pref" }, h("div", { class: "label", text: "Cooking style you like most" }),
@@ -28,7 +28,10 @@ function openPrefs() {
       h("div", { class: "pref" }, h("div", { class: "label", text: "Meals in the week plan" }),
         h("div", { class: "seg" }, SLOT_ORDER.map(s => h("label", null,
           h("input", { type: "checkbox", checked: p.meals[s], onchange: e => set({ meals: Object.assign({}, p.meals, { [s]: e.target.checked }) }) }),
-          h("span", { text: SLOT_NAMES[s] }))))),
+          h("span", { text: SLOT_NAMES[s] })))),
+        p.meals.L && !p.meals.D ? h("label", { class: "check-row" },
+          h("input", { type: "checkbox", checked: !!p.lunchCoversDinner, onchange: e => set({ lunchCoversDinner: e.target.checked }) }),
+          h("span", { text: "Lunch lasts until dinner (cook double, pick dishes that keep)" })) : null),
       h("div", { class: "pref" }, h("div", { class: "label", text: "Always in my kitchen" }),
         h("p", { class: "hint", text: "Tick the seasonings you always keep. Recipes count them as available without listing them in the pantry." }),
         basics),

@@ -60,6 +60,7 @@ ok(ranked.length > 20, "plenty of cook-now suggestions");
 ok(run("rankRecipes(S)[0].missing.length") === 0, "best suggestion needs nothing");
 console.log("   unlock hints:", JSON.stringify(run("unlockHints(S)")));
 
+run('S.prefs.meals = { B: true, L: true, D: true }; S.prefs.lunchCoversDinner = false;');   // three cooked meals a day
 for (const shop of ["none", "few", "any"]) for (const servings of [1, 2, 4, 6]) {
   run(`S.prefs.shop = "${shop}"; S.prefs.servings = ${servings};`);
   const plan = run("buildWeek(S, 12345)");
@@ -81,11 +82,31 @@ for (const shop of ["none", "few", "any"]) for (const servings of [1, 2, 4, 6]) 
   }
 }
 
+console.log("4b. lunch lasts until dinner");
+run(`S = emptyState(); addPantryText("3 cans sardines, 2 cans corned beef, rice 5kg, 12 eggs, 1 kg chicken, 1 kg pork, half head cabbage, 4 tomatoes, onion, garlic, 4 potatoes, soy sauce, vinegar, fish sauce")`);
+eq(run("JSON.stringify(S.prefs.meals) + S.prefs.lunchCoversDinner"), '{"B":true,"L":true,"D":false}true', "default = breakfast + lunch, lunch covers dinner");
+for (const servings of [2, 4, 5]) {
+  run(`S.prefs.servings = ${servings}; S.prefs.shop = "few";`);
+  const plan = run("buildWeek(S, 777)");
+  ok(plan.meals.length === 14, servings + ": 14 meals (7 breakfasts + 7 lunches), got " + plan.meals.length);
+  ok(!plan.meals.some(m => m.slot === "D"), servings + ": no separate dinner");
+  ok(plan.meals.filter(m => m.slot === "L").every(m => m.portions === servings * 2), servings + ": lunch cooked double");
+  ok(plan.meals.filter(m => m.slot === "B").every(m => m.portions === servings), servings + ": breakfast single");
+  ok(!plan.meals.some(m => m.slot === "L" && run(`RECIPE_BY_ID["${m.rid}"].tagSet.has("nokeep")`)), servings + ": no lunch that goes soggy by dinner");
+  const avail = run("pantryAvail(S)"), used = {};
+  for (const m of plan.meals) for (const u of m.uses) if (u.amt != null) used[u.key] = (used[u.key] || 0) + u.amt;
+  for (const [k, amt] of Object.entries(used)) ok(amt <= avail.get(k).amt + 1e-6, `${servings}: ${k} overdrawn`);
+  if (servings === 4) for (let d = 0; d < 7; d++) console.log("     day " + d + ": " + plan.meals.filter(m => m.d === d).map(m => m.slot + "x" + m.portions + " " + m.rid + (m.missing.length ? " [buy " + m.missing.map(x => x.key).join("+") + "]" : "")).join(" | "));
+}
+eq(run(`(() => { const s = normalizeState({ prefs: { servings: 3, meals: { B: true, L: true, D: true } } }); return [s.prefs.meals.D, s.prefs.lunchCoversDinner]; })()`), [false, true], "old saved prefs move to the new routine once");
+eq(run(`(() => { const s = normalizeState({ prefs: { servings: 3, meals: { B: true, L: true, D: true }, lunchCoversDinner: false } }); return [s.prefs.meals.D, s.prefs.lunchCoversDinner]; })()`), [true, false], "an explicit choice is kept");
+run('S.prefs.meals.D = true; S.prefs.lunchCoversDinner = false;');
+
 console.log("5. empty pantry");
 run("S = emptyState()");
 eq(run("rankRecipes(S).length"), 0, "nothing to cook from an empty pantry");
 const ep = run("buildWeek(S, 1)");
-ok(ep.meals.length === 21, "empty pantry still gives a plan (all shopping)");
+ok(ep.meals.length === 14, "empty pantry still gives a plan (all shopping), got " + ep.meals.length);
 
 console.log("6. scaling + formatting");
 eq(run("formatAmt(1500, ING.chicken)"), "1½ kg", "kg format");

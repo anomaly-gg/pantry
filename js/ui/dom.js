@@ -15,6 +15,9 @@ function h(tag, attrs, ...kids) {
   return el;
 }
 
+/* Like el.append, but skips null/false (native append would print "null"). */
+function appendAll(el, ...kids) { el.append(...kids.flat().filter(k => k != null && k !== false)); }
+
 const ICONS = {
   check: "M5 12.5l4.5 4.5L19 7.5",
   x: "M6 6l12 12M18 6L6 18",

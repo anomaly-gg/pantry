@@ -11,7 +11,15 @@ const SLOT_ORDER = ["B", "L", "D"];
 
 function planSlots(prefs) { return SLOT_ORDER.filter(s => prefs.meals[s]); }
 
-function fitsSlot(r, slot) { return r.slots.includes(slot) && !r.tagSet.has("side"); }
+/* Lunch is cooked big enough to last until dinner when there's no separate dinner. */
+const lunchCoversDinner = prefs => !!prefs.lunchCoversDinner && prefs.meals.L && !prefs.meals.D;
+function portionsFor(slot, prefs) { return prefs.servings * (slot === "L" && lunchCoversDinner(prefs) ? 2 : 1); }
+
+function fitsSlot(r, slot, prefs) {
+  if (!r.slots.includes(slot) || r.tagSet.has("side")) return false;
+  // a lunch that has to last until dinner can't be something that goes soggy or limp
+  return !(slot === "L" && prefs && lunchCoversDinner(prefs) && r.tagSet.has("nokeep"));
+}
 
 function scoreMeal(st, ctx) {
   const { d, slot, prefs, mainsToday, yesterdayMain, mainCount } = ctx;
@@ -35,6 +43,7 @@ function scoreMeal(st, ctx) {
   if (prefs.style !== "mix" && r.style === prefs.style) s += 4;
   if (slot === "B" && r.min <= 20) s += 3;
   if (slot === "L" && r.min <= 40) s += 2;
+  if (slot === "L" && lunchCoversDinner(prefs) && r.tagSet.has("keeps")) s += 5;
   if (cookedRecently(r.id, 4)) s -= 12;
   return s;
 }
@@ -44,8 +53,8 @@ function pickMeal(ctx, exclude) {
   const limit = MAX_MISSING[prefs.shop] ?? 2;
   const scored = [];
   for (const r of RECIPES) {
-    if (!fitsSlot(r, slot) || exclude.has(r.id)) continue;
-    const st = recipeStatus(r, ctx.avail, prefs.servings);
+    if (!fitsSlot(r, slot, prefs) || exclude.has(r.id)) continue;
+    const st = recipeStatus(r, ctx.avail, portionsFor(slot, prefs));
     st.score = scoreMeal(st, ctx) + rand() * 6;
     scored.push(st);
   }
@@ -80,14 +89,14 @@ function buildWeek(state, seed) {
       usedDay.set(st.r.id, d);
       mainsByDay[d].push(st.r.main);
       mainCount.set(st.r.main, (mainCount.get(st.r.main) || 0) + 1);
-      meals.push(mealFrom(st, d, slot));
+      meals.push(mealFrom(st, d, slot, portionsFor(slot, prefs)));
     }
   }
   return { start: todayIso(), seed, at: Date.now(), servings: prefs.servings, meals };
 }
 
-function mealFrom(st, d, slot) {
-  return { id: uid(), d, slot, rid: st.r.id, uses: st.uses, missing: st.missing.map(m => ({ key: m.key, amt: m.amt })), done: false };
+function mealFrom(st, d, slot, portions) {
+  return { id: uid(), d, slot, portions, rid: st.r.id, uses: st.uses, missing: st.missing.map(m => ({ key: m.key, amt: m.amt })), done: false };
 }
 
 /* Pantry left after every planned meal except `skip` (meals already cooked have left the pantry already). */
@@ -105,8 +114,8 @@ function swapOptions(state, plan, meal, n = 6) {
   const ctx = { d: meal.d, slot: meal.slot, prefs: state.prefs, avail, rand: () => 0, mainsToday: sameDay, yesterdayMain: null, mainCount: new Map() };
   const out = [];
   for (const r of RECIPES) {
-    if (!fitsSlot(r, meal.slot) || inPlan.has(r.id)) continue;
-    const st = recipeStatus(r, avail, state.prefs.servings);
+    if (!fitsSlot(r, meal.slot, state.prefs) || inPlan.has(r.id)) continue;
+    const st = recipeStatus(r, avail, mealPortions(meal, state.prefs));
     if (!st.tracked) continue;
     st.score = scoreMeal(st, ctx) - st.missing.length * 20;
     out.push(st);
@@ -115,8 +124,9 @@ function swapOptions(state, plan, meal, n = 6) {
 }
 function swapMeal(state, plan, meal, rid) {
   const avail = availExcept(state, plan, meal);
-  const st = recipeStatus(RECIPE_BY_ID[rid], avail, state.prefs.servings);
-  Object.assign(meal, mealFrom(st, meal.d, meal.slot), { id: meal.id });
+  const portions = mealPortions(meal, state.prefs);
+  const st = recipeStatus(RECIPE_BY_ID[rid], avail, portions);
+  Object.assign(meal, mealFrom(st, meal.d, meal.slot, portions), { id: meal.id });
 }
 
 /* Put everything the plan still needs on the shopping list (replacing the plan's earlier unticked items). */
@@ -132,6 +142,9 @@ function syncPlanShopping(state, plan) {
     }
   }
 }
+
+/* Portions a planned meal was cooked for (plans made before portions were stored: one meal's worth). */
+function mealPortions(meal, prefs) { return meal.portions || prefs.servings; }
 
 /* Which day of the plan is today (0-6), or -1 when the plan is over / not started. */
 function planDayIndex(plan) {

@@ -12,3 +12,4 @@
 .code-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .sync-code { font: 700 17px/1.2 ui-monospace, Consolas, monospace; letter-spacing: .04em; padding: 8px 12px; border-radius: 8px; background: var(--sunk); overflow-wrap: anywhere; }
 .about { padding-top: 4px; }
+.small-seg label { padding: 7px 12px; font-size: 14px; }

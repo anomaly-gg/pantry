@@ -5,7 +5,7 @@
 const LS_STATE = "pc_state_v1";
 
 function defaultPrefs() {
-  return { servings: 4, style: "filipino", shop: "few", meals: { B: true, L: true, D: true }, basics: DEFAULT_BASICS.slice() };
+  return { servings: 4, style: "filipino", shop: "few", meals: { B: true, L: true, D: false }, lunchCoversDinner: true, basics: DEFAULT_BASICS.slice() };
 }
 function emptyState() {
   return { items: {}, itemsDel: {}, shop: {}, shopDel: {}, prefs: defaultPrefs(), prefsAt: 0, plan: null, planAt: 0, cooked: [] };
@@ -14,8 +14,10 @@ function normalizeState(s) {
   const base = emptyState();
   if (!s || typeof s !== "object") return base;
   for (const k of Object.keys(base)) if (s[k] == null || typeof s[k] !== typeof base[k]) s[k] = base[k];
+  // saved before "lunch lasts till dinner" existed (2026-10-04): switch to the household's real routine
+  if (s.prefs && s.prefs.lunchCoversDinner === undefined) s.prefs.meals = Object.assign({}, s.prefs.meals, { D: false });
   s.prefs = Object.assign(defaultPrefs(), s.prefs);
-  s.prefs.meals = Object.assign({ B: true, L: true, D: true }, s.prefs.meals);
+  s.prefs.meals = Object.assign({ B: true, L: true, D: false }, s.prefs.meals);
   if (!Array.isArray(s.prefs.basics)) s.prefs.basics = DEFAULT_BASICS.slice();
   if (!Array.isArray(s.cooked)) s.cooked = [];
   return s;

@@ -2,7 +2,7 @@
 
 /* ---- Asian ---- */
 recipe({
-  id: "tomato-egg-stirfry", name: "Tomato and egg stir-fry", style: "asian", slots: "BLD", min: 10, tags: "ulam cheap quick kids",
+  id: "tomato-egg-stirfry", name: "Tomato and egg stir-fry", style: "asian", slots: "BLD", min: 10, tags: "ulam cheap quick kids nokeep",
   ing: ["eggs 5", "tomato 4 | wedges", "spring-onion?", "sugar | 1 tsp", "soy-sauce? | 1 tsp", "salt", "oil | 2 tbsp", "water | 2 tbsp"],
   steps: [
     "Scramble the eggs in hot oil until just set, then set aside.",
@@ -62,7 +62,7 @@ recipe({
   ],
 });
 recipe({
-  id: "egg-drop-soup", name: "Egg drop soup", style: "asian", slots: "BLD", min: 10, tags: "soup cheap quick",
+  id: "egg-drop-soup", name: "Egg drop soup", style: "asian", slots: "BLD", min: 10, tags: "soup cheap quick nokeep",
   ing: ["eggs 3 | beaten", "bouillon | 2", "cornstarch | 2 tbsp in 1/4 cup water", "spring-onion?", "sesame-oil? | 1 tsp", "pepper", "water | 5 cups"],
   steps: [
     "Bring water and broth cubes to a boil.",
@@ -72,7 +72,7 @@ recipe({
   ],
 });
 recipe({
-  id: "peanut-chicken", name: "Chicken in peanut sauce", style: "asian", slots: "LD", min: 30, tags: "ulam kids",
+  id: "peanut-chicken", name: "Chicken in peanut sauce", style: "asian", slots: "LD", min: 30, tags: "ulam kids keeps",
   ing: ["chicken 600g | bite-size", "peanut-butter | 1/3 cup", "coconut-milk 200? | 1 pack, or water", "soy-sauce | 2 tbsp", "sugar | 1 tbsp", "calamansi? | 2", "garlic | 3 cloves", "onion | 1", "chili-flakes?", "oil | 1 tbsp", "water | 1/2 cup"],
   steps: [
     "Brown the chicken with garlic and onion.",
@@ -82,7 +82,7 @@ recipe({
   ],
 });
 recipe({
-  id: "pork-kare-kare-lite", name: "Pork and vegetables in peanut sauce", style: "filipino", slots: "LD", min: 70, tags: "ulam comfort",
+  id: "pork-kare-kare-lite", name: "Pork and vegetables in peanut sauce", style: "filipino", slots: "LD", min: 70, tags: "ulam comfort keeps",
   ing: ["pork 600g | cubed", "peanut-butter | 1/2 cup", "eggplant 2 | sliced", "sitaw 1 | cut", "pechay 1 | cut", "onion | 1", "garlic | 4 cloves", "cornstarch? | 1 tbsp, or toasted rice flour", "bagoong | to serve", "water | 5 cups", "oil | 1 tbsp", "salt"],
   steps: [
     "Simmer the pork in the water 45 minutes until tender. Keep 3 cups of broth.",
@@ -92,7 +92,7 @@ recipe({
   ],
 });
 recipe({
-  id: "korean-egg-roll", name: "Rolled vegetable omelette", style: "asian", slots: "BLD", min: 15, tags: "ulam kids cheap",
+  id: "korean-egg-roll", name: "Rolled vegetable omelette", style: "asian", slots: "BLD", min: 15, tags: "ulam kids cheap nokeep",
   ing: ["eggs 5", "carrot 1? | finely chopped", "spring-onion? | chopped", "onion | 1/4, finely chopped", "salt", "oil | 1 tbsp"],
   steps: [
     "Beat eggs with salt and the chopped vegetables.",
@@ -102,7 +102,7 @@ recipe({
   ],
 });
 recipe({
-  id: "ramen-style-soup", name: "Pork and egg noodle soup", style: "asian", slots: "LD", min: 30, tags: "soup comfort",
+  id: "ramen-style-soup", name: "Pork and egg noodle soup", style: "asian", slots: "LD", min: 30, tags: "soup comfort nokeep",
   ing: ["instant-noodles 4 | or 300 g fresh noodles", "pork-belly 300g | thin slices", "eggs 4 | soft-boiled", "pechay 1?", "bean-sprouts 150g?", "spring-onion?", "garlic | 4 cloves", "soy-sauce | 2 tbsp", "water | 8 cups", "oil | 1 tbsp"],
   steps: [
     "Boil the eggs 6 1/2 minutes, then cool in cold water and peel.",
@@ -163,7 +163,7 @@ recipe({
   ],
 });
 recipe({
-  id: "coleslaw", name: "Coleslaw", style: "western", slots: "LD", min: 10, tags: "healthy kids cheap side",
+  id: "coleslaw", name: "Coleslaw", style: "western", slots: "LD", min: 10, tags: "healthy kids cheap side nokeep",
   ing: ["cabbage 0.5 | shredded", "carrot 1 | grated", "mayo | 1/2 cup", "vinegar | 1 tbsp", "sugar | 1 tbsp", "salt", "pepper"],
   steps: [
     "Mix mayonnaise, vinegar, sugar, salt and pepper.",
@@ -172,7 +172,7 @@ recipe({
   ],
 });
 recipe({
-  id: "cucumber-salad", name: "Cucumber and tomato salad", style: "western", slots: "LD", min: 10, tags: "healthy cheap quick side",
+  id: "cucumber-salad", name: "Cucumber and tomato salad", style: "western", slots: "LD", min: 10, tags: "healthy cheap quick side nokeep",
   ing: ["cucumber 2 | sliced", "tomato 2 | wedges", "onion | 1/2, sliced", "vinegar | 3 tbsp", "sugar | 1 tsp", "salt", "pepper"],
   steps: [
     "Combine cucumber, tomato and onion.",
@@ -191,7 +191,7 @@ recipe({
   ],
 });
 recipe({
-  id: "fried-rice-omelette", name: "Omurice (omelette over fried rice)", style: "asian", slots: "LD", min: 25, tags: "kids",
+  id: "fried-rice-omelette", name: "Omurice (omelette over fried rice)", style: "asian", slots: "LD", min: 25, tags: "kids nokeep",
   ing: ["rice 300g | 5 cups cooked rice", "chicken 200g? | diced, or hotdog", "eggs 6", "onion | 1", "ketchup | 1/3 cup", "butter | 2 tbsp", "salt", "pepper"],
   steps: [
     "Fry onion and chicken in butter. Add rice and ketchup and stir-fry until red and hot.",

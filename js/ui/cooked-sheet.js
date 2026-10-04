@@ -19,7 +19,7 @@ function openCooked(r, servings, meal) {
     }
   }
   openSheet({ title: "Update your pantry", build: body => {
-    body.append(h("p", { class: "hint", text: rows.length
+    appendAll(body, h("p", { class: "hint", text: rows.length
       ? "Here's what " + r.name + " used. Fix any amount, then save."
       : "This recipe didn't use anything with a counted amount, so there's nothing to take out." }));
     const list = h("ul", { class: "cooked-list" });
@@ -34,7 +34,7 @@ function openCooked(r, servings, meal) {
         h("div", { class: "cl-after" }, h("span", { class: "label", text: "Left" }), left),
         h("label", { class: "check-row small" }, usedUp, h("span", { text: "Used up" }))));
     }
-    body.append(list, h("div", { class: "row sheet-actions" },
+    appendAll(body, list, h("div", { class: "row sheet-actions" },
       h("button", { class: "btn primary big", onclick: () => {
         const before = clone(S.items);
         for (const row of rows) {

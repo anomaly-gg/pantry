@@ -19,7 +19,8 @@ function renderWeek() {
   const today = planDayIndex(plan);
   const current = plan && today >= 0;
   const slots = planSlots(S.prefs);
-  const who = slots.map(s => SLOT_NAMES[s].toLowerCase()).join(", ").replace(/, ([^,]*)$/, " and $1") + " for " + plural(S.prefs.servings, "person", "people");
+  const who = slots.map(s => SLOT_NAMES[s].toLowerCase()).join(", ").replace(/, ([^,]*)$/, " and $1")
+    + (lunchCoversDinner(S.prefs) ? " (lunch made big enough for dinner)" : "") + " for " + plural(S.prefs.servings, "person", "people");
 
   const head = h("div", { class: "view-head" }, h("h2", { text: "Your week" }),
     h("p", { text: current ? "Built from your pantry. Tap a meal for the recipe." : "Seven days of " + who + ", built from what you have." }));
@@ -46,6 +47,10 @@ function renderWeek() {
           h("button", { class: "btn small primary", onclick: makePlan }, "Yes, new plan"),
           h("button", { class: "btn small", onclick: () => { confirmReplan = false; renderWeek(); } }, "Cancel"))
       : h("button", { class: "btn small", onclick: () => { confirmReplan = true; renderWeek(); } }, icon("swap", 16), "New plan"));
+  const lunchNow = lunchCoversDinner(S.prefs), lunchThen = plan.meals.some(m => m.slot === "L" && m.portions > plan.servings);
+  if (lunchNow !== lunchThen && plan.meals.some(m => m.slot === "L")) bar.append(h("p", { class: "hint", text: lunchNow
+    ? "This plan cooks lunch for one meal only. Make a new plan so lunch lasts until dinner."
+    : "This plan doubles lunch for dinner. Make a new plan to use your new setting." }));
   if (plan.servings !== S.prefs.servings) bar.append(h("p", { class: "hint", text: "This plan is for " + plural(plan.servings, "person", "people") + ". Make a new plan to use your new setting." }));
 
   const start = fromIso(plan.start);
@@ -67,11 +72,12 @@ function mealRow(m) {
   const r = RECIPE_BY_ID[m.rid];
   if (!r) return h("li", { class: "meal" }, h("span", { class: "hint", text: "This recipe is no longer in the book. Swap it." }));
   return h("li", { class: "meal" + (m.done ? " done" : "") },
-    h("span", { class: "slot", text: SLOT_NAMES[m.slot] }),
+    h("span", { class: "slot", text: m.slot === "L" && m.portions > S.prefs.servings ? "Lunch + dinner" : SLOT_NAMES[m.slot] }),
     h("button", { class: "meal-main", onclick: () => openRecipe(r, m) },
       h("span", { class: "meal-name", text: r.name }),
       h("span", { class: "meal-sub" },
         h("span", { class: "num", text: r.min + " min" }),
+        m.portions ? h("span", { class: "num", text: m.portions + " servings" }) : null,
         m.done ? h("span", { class: "ok", text: "Cooked" })
           : m.missing.length ? h("span", { class: "buy", text: "Buy " + needText(m.missing) })
           : h("span", { class: "ok", text: "All from pantry" }))),

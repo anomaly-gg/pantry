@@ -2,7 +2,7 @@
 
 /* ---- Chicken ---- */
 recipe({
-  id: "chicken-adobo", name: "Chicken adobo", style: "filipino", slots: "LD", min: 45, tags: "ulam comfort onepot",
+  id: "chicken-adobo", name: "Chicken adobo", style: "filipino", slots: "LD", min: 45, tags: "ulam comfort onepot keeps",
   ing: ["chicken 1kg | cut into serving pieces", "soy-sauce | 1/2 cup", "vinegar | 1/3 cup", "garlic | 1 head, crushed", "bay-leaf? | 3", "pepper | 1 tsp", "sugar? | 1 tsp", "water | 1/2 cup", "oil | 1 tbsp"],
   steps: [
     "Put the chicken, soy sauce, garlic, bay leaves and pepper in a pot. Marinate 15 minutes if you have time.",
@@ -13,7 +13,7 @@ recipe({
   tip: "Adobo tastes better the next day, so it's a good one to cook double.",
 });
 recipe({
-  id: "chicken-tinola", name: "Chicken tinola", style: "filipino", slots: "LD", min: 40, tags: "ulam soup healthy comfort",
+  id: "chicken-tinola", name: "Chicken tinola", style: "filipino", slots: "LD", min: 40, tags: "ulam soup healthy comfort keeps",
   ing: ["chicken 800g | cut into pieces", "green-papaya 1 | wedges, or 2 sayote", "malunggay? | 1 cup, or pechay or chili leaves", "ginger | 2 thumbs, sliced", "onion | 1, sliced", "garlic | 4 cloves, minced", "fish-sauce | 2 tbsp", "water | 6 cups", "oil | 1 tbsp", "pepper"],
   steps: [
     "Sauté garlic, onion and ginger in oil until fragrant.",
@@ -23,7 +23,7 @@ recipe({
   ],
 });
 recipe({
-  id: "chicken-tinola-sayote", name: "Chicken tinola with sayote", style: "filipino", slots: "LD", min: 40, tags: "ulam soup healthy comfort",
+  id: "chicken-tinola-sayote", name: "Chicken tinola with sayote", style: "filipino", slots: "LD", min: 40, tags: "ulam soup healthy comfort keeps",
   ing: ["chicken 800g | cut into pieces", "sayote 2 | wedges", "pechay 1? | or malunggay", "ginger | 2 thumbs, sliced", "onion | 1, sliced", "garlic | 4 cloves, minced", "fish-sauce | 2 tbsp", "water | 6 cups", "oil | 1 tbsp", "pepper"],
   steps: [
     "Sauté garlic, onion and ginger in oil until fragrant.",
@@ -33,7 +33,7 @@ recipe({
   ],
 });
 recipe({
-  id: "chicken-afritada", name: "Chicken afritada", style: "filipino", slots: "LD", min: 45, tags: "ulam kids comfort",
+  id: "chicken-afritada", name: "Chicken afritada", style: "filipino", slots: "LD", min: 45, tags: "ulam kids comfort keeps",
   ing: ["chicken 1kg | cut into pieces", "tomato-sauce 1 | 1 pack (250 g)", "potato 2 | quartered", "carrot 1 | chunks", "bell-pepper 1? | strips", "onion | 1, chopped", "garlic | 4 cloves, minced", "fish-sauce | 1 tbsp", "bay-leaf?", "water | 1 cup", "oil | 2 tbsp"],
   steps: [
     "Brown the potatoes and carrots in oil and set aside.",
@@ -43,7 +43,7 @@ recipe({
   ],
 });
 recipe({
-  id: "chicken-curry", name: "Filipino chicken curry", style: "filipino", slots: "LD", min: 45, tags: "ulam comfort",
+  id: "chicken-curry", name: "Filipino chicken curry", style: "filipino", slots: "LD", min: 45, tags: "ulam comfort keeps",
   ing: ["chicken 1kg | cut into pieces", "coconut-milk 400 | 1 can (400 ml)", "potato 2 | cubed", "carrot 1 | cubed", "bell-pepper 1? | cubed", "curry-powder | 2 tbsp", "onion | 1, chopped", "garlic | 4 cloves, minced", "ginger? | 1 thumb, minced", "fish-sauce | 1 tbsp", "water | 1 cup", "oil | 2 tbsp"],
   steps: [
     "Fry the potatoes and carrots until lightly golden and set aside.",
@@ -83,7 +83,7 @@ recipe({
   ],
 });
 recipe({
-  id: "chicken-pastel-mushroom", name: "Chicken with mushrooms and potatoes", style: "filipino", slots: "LD", min: 40, tags: "ulam comfort",
+  id: "chicken-pastel-mushroom", name: "Chicken with mushrooms and potatoes", style: "filipino", slots: "LD", min: 40, tags: "ulam comfort keeps",
   ing: ["chicken 800g | cut into pieces", "mushroom-can 1", "potato 2 | cubed", "carrot 1 | cubed", "evap-milk 185 | 1/2 can", "soy-sauce | 2 tbsp", "calamansi? | 2", "onion | 1, chopped", "garlic | 4 cloves, minced", "butter? | 1 tbsp", "water | 1 cup"],
   steps: [
     "Marinate the chicken in soy sauce and calamansi for 15 minutes.",
@@ -105,7 +105,7 @@ recipe({
 
 /* ---- Pork ---- */
 recipe({
-  id: "pork-adobo", name: "Pork adobo", style: "filipino", slots: "LD", min: 60, tags: "ulam comfort onepot",
+  id: "pork-adobo", name: "Pork adobo", style: "filipino", slots: "LD", min: 60, tags: "ulam comfort onepot keeps",
   ing: ["pork 1kg | cubed (kasim or belly)", "soy-sauce | 1/2 cup", "vinegar | 1/3 cup", "garlic | 1 head, crushed", "bay-leaf? | 3", "pepper | 1 tsp", "sugar? | 1 tsp", "water | 1 cup", "oil | 1 tbsp"],
   steps: [
     "Brown the pork in a little oil, then add the garlic and cook until fragrant.",
@@ -115,7 +115,7 @@ recipe({
   ],
 });
 recipe({
-  id: "sinigang-baboy", name: "Sinigang na baboy", style: "filipino", slots: "LD", min: 75, tags: "ulam soup comfort",
+  id: "sinigang-baboy", name: "Sinigang na baboy", style: "filipino", slots: "LD", min: 75, tags: "ulam soup comfort keeps",
   ing: ["pork 800g | ribs or belly, cubed", "sinigang-mix | 1 pack (or fresh tamarind)", "radish 1? | sliced", "kangkong 1? | cut", "sitaw 1? | cut into 2-inch pieces", "eggplant 1? | sliced", "okra 4?", "tomato 2 | quartered", "onion | 1, quartered", "chili? | 2 long chilies", "fish-sauce | to taste", "water | 8 cups"],
   steps: [
     "Put pork, tomato, onion and water in a pot. Boil, skim the foam, then simmer 45 minutes until tender.",
@@ -125,7 +125,7 @@ recipe({
   ],
 });
 recipe({
-  id: "nilagang-baboy", name: "Nilagang baboy", style: "filipino", slots: "LD", min: 75, tags: "ulam soup comfort healthy",
+  id: "nilagang-baboy", name: "Nilagang baboy", style: "filipino", slots: "LD", min: 75, tags: "ulam soup comfort healthy keeps",
   ing: ["pork 800g | ribs or kasim", "potato 2 | halved", "cabbage 0.5? | wedges", "pechay 1? | or bok choy", "saba 2? | halved", "onion | 1, quartered", "pepper | 1 tsp", "fish-sauce | 2 tbsp", "water | 8 cups"],
   steps: [
     "Boil pork with onion, pepper and water. Skim the foam, then simmer 50 minutes until tender.",
@@ -135,7 +135,7 @@ recipe({
   ],
 });
 recipe({
-  id: "pork-menudo", name: "Pork menudo", style: "filipino", slots: "LD", min: 50, tags: "ulam comfort",
+  id: "pork-menudo", name: "Pork menudo", style: "filipino", slots: "LD", min: 50, tags: "ulam comfort keeps",
   ing: ["pork 600g | small cubes", "tomato-sauce 1 | 1 pack (250 g)", "liver-spread 1? | or chopped pork liver", "potato 2 | small cubes", "carrot 1 | small cubes", "bell-pepper 1? | diced", "chickpeas 1?", "soy-sauce | 2 tbsp", "onion | 1, chopped", "garlic | 4 cloves, minced", "water | 1 cup", "oil | 2 tbsp", "sugar? | 1 tsp"],
   steps: [
     "Fry the potatoes and carrots until lightly browned. Set aside.",
@@ -145,7 +145,7 @@ recipe({
   ],
 });
 recipe({
-  id: "pork-giniling", name: "Pork giniling", style: "filipino", slots: "LD", min: 30, tags: "ulam kids cheap",
+  id: "pork-giniling", name: "Pork giniling", style: "filipino", slots: "LD", min: 30, tags: "ulam kids cheap keeps",
   ing: ["ground-pork 500g", "potato 1 | small cubes", "carrot 1 | small cubes", "tomato-sauce 0.5? | 1/2 pack, or 2 chopped tomatoes", "onion | 1, chopped", "garlic | 4 cloves, minced", "soy-sauce | 1 tbsp", "fish-sauce? | 1 tsp", "eggs 4? | hard-boiled", "water | 1/2 cup", "oil | 1 tbsp", "pepper"],
   steps: [
     "Sauté garlic and onion, then add the pork and cook until browned.",
@@ -185,7 +185,7 @@ recipe({
   ],
 });
 recipe({
-  id: "tokwat-baboy", name: "Tokwa't baboy", style: "filipino", slots: "LD", min: 50, tags: "ulam",
+  id: "tokwat-baboy", name: "Tokwa't baboy", style: "filipino", slots: "LD", min: 50, tags: "ulam keeps",
   ing: ["tofu 2 | blocks", "pork-belly 300g | or pork ears", "soy-sauce | 1/4 cup", "vinegar | 1/4 cup", "onion | 1, chopped", "chili? | 2", "sugar | 1 tsp", "salt", "oil | for frying", "water"],
   steps: [
     "Boil the pork in salted water 30 minutes. Drain, cool and cube.",
@@ -195,7 +195,7 @@ recipe({
   ],
 });
 recipe({
-  id: "pork-binagoongan", name: "Pork binagoongan", style: "filipino", slots: "LD", min: 50, tags: "ulam spicy",
+  id: "pork-binagoongan", name: "Pork binagoongan", style: "filipino", slots: "LD", min: 50, tags: "ulam spicy keeps",
   ing: ["pork-belly 700g | cubed", "bagoong | 3 tbsp", "tomato 2 | chopped", "eggplant 2? | sliced", "chili? | 2", "onion | 1", "garlic | 5 cloves", "vinegar | 2 tbsp", "sugar | 1 tbsp", "water | 1 cup", "oil | 1 tbsp"],
   steps: [
     "Brown the pork in oil until the fat renders.",
@@ -205,7 +205,7 @@ recipe({
   ],
 });
 recipe({
-  id: "bicol-express", name: "Bicol express", style: "filipino", slots: "LD", min: 50, tags: "ulam spicy",
+  id: "bicol-express", name: "Bicol express", style: "filipino", slots: "LD", min: 50, tags: "ulam spicy keeps",
   ing: ["pork-belly 600g | strips", "coconut-milk 400 | 1 can", "bagoong | 2 tbsp", "chili | 6 long chilies, sliced", "onion | 1", "garlic | 5 cloves", "ginger? | 1 thumb", "oil | 1 tbsp"],
   steps: [
     "Brown the pork strips until the fat renders.",
@@ -245,7 +245,7 @@ recipe({
   ],
 });
 recipe({
-  id: "pork-pochero", name: "Pork pochero", style: "filipino", slots: "LD", min: 70, tags: "ulam comfort",
+  id: "pork-pochero", name: "Pork pochero", style: "filipino", slots: "LD", min: 70, tags: "ulam comfort keeps",
   ing: ["pork 700g | cubed", "pork-and-beans 1", "saba 3 | halved", "potato 2 | quartered", "cabbage 0.5 | wedges", "pechay 1?", "tomato-sauce 1 | 1 pack", "chickpeas 1?", "onion | 1", "garlic | 5 cloves", "fish-sauce | 1 tbsp", "water | 4 cups", "oil | 2 tbsp"],
   steps: [
     "Sauté garlic and onion, then brown the pork. Add water and simmer 40 minutes.",
@@ -268,7 +268,7 @@ recipe({
 
 /* ---- Beef ---- */
 recipe({
-  id: "bistek", name: "Bistek Tagalog", style: "filipino", slots: "LD", min: 40, tags: "ulam",
+  id: "bistek", name: "Bistek Tagalog", style: "filipino", slots: "LD", min: 40, tags: "ulam keeps",
   ing: ["beef 600g | thin slices", "soy-sauce | 1/3 cup", "calamansi | 8, juiced", "onion | 2, in rings", "garlic | 4 cloves", "pepper", "water | 1/2 cup", "oil | 2 tbsp"],
   steps: [
     "Marinate the beef in soy sauce, calamansi, garlic and pepper for 30 minutes.",
@@ -278,7 +278,7 @@ recipe({
   ],
 });
 recipe({
-  id: "nilagang-baka", name: "Nilagang baka", style: "filipino", slots: "LD", min: 120, tags: "ulam soup comfort healthy",
+  id: "nilagang-baka", name: "Nilagang baka", style: "filipino", slots: "LD", min: 120, tags: "ulam soup comfort healthy keeps",
   ing: ["beef 800g | shank or brisket", "potato 2 | halved", "cabbage 0.5 | wedges", "pechay 1?", "corn-can 1? | or 2 ears fresh corn", "onion | 1", "pepper | 1 tsp", "fish-sauce | 2 tbsp", "water | 10 cups"],
   steps: [
     "Boil the beef with onion and pepper. Skim the foam and simmer 1.5 hours until tender (30 to 40 minutes in a pressure cooker).",
@@ -288,7 +288,7 @@ recipe({
   ],
 });
 recipe({
-  id: "beef-kaldereta", name: "Beef kaldereta", style: "filipino", slots: "LD", min: 110, tags: "ulam comfort spicy",
+  id: "beef-kaldereta", name: "Beef kaldereta", style: "filipino", slots: "LD", min: 110, tags: "ulam comfort spicy keeps",
   ing: ["beef 800g | cubed", "tomato-sauce 1 | 1 pack", "liver-spread 1?", "potato 2 | cubed", "carrot 1 | cubed", "bell-pepper 1?", "cheese? | grated", "chili? | 2", "onion | 1", "garlic | 5 cloves", "soy-sauce | 1 tbsp", "water | 2 cups", "oil | 2 tbsp"],
   steps: [
     "Brown the beef, then add garlic and onion.",
@@ -298,7 +298,7 @@ recipe({
   ],
 });
 recipe({
-  id: "picadillo", name: "Beef picadillo soup", style: "filipino", slots: "LD", min: 30, tags: "ulam soup cheap",
+  id: "picadillo", name: "Beef picadillo soup", style: "filipino", slots: "LD", min: 30, tags: "ulam soup cheap keeps",
   ing: ["ground-beef 400g | or ground pork", "potato 2 | small cubes", "carrot 1? | small cubes", "tomato 2 | chopped", "onion | 1", "garlic | 4 cloves", "fish-sauce | 1 tbsp", "water | 4 cups", "oil | 1 tbsp", "pepper"],
   steps: [
     "Sauté garlic, onion and tomato.",
@@ -320,7 +320,7 @@ recipe({
   ],
 });
 recipe({
-  id: "paksiw-isda", name: "Paksiw na isda", style: "filipino", slots: "LD", min: 30, tags: "ulam healthy cheap",
+  id: "paksiw-isda", name: "Paksiw na isda", style: "filipino", slots: "LD", min: 30, tags: "ulam healthy cheap keeps",
   ing: ["fish 800g | bangus or galunggong", "vinegar | 1/2 cup", "ginger | 1 thumb, sliced", "garlic | 4 cloves", "onion | 1", "eggplant 1? | sliced", "ampalaya 1? | sliced", "chili? | 2 long chilies", "salt", "pepper", "water | 1 cup"],
   steps: [
     "Line a pan with ginger, garlic and onion. Lay the fish and vegetables on top.",
@@ -350,7 +350,7 @@ recipe({
   ],
 });
 recipe({
-  id: "escabeche", name: "Fish escabeche (sweet and sour fish)", style: "filipino", slots: "LD", min: 35, tags: "ulam kids",
+  id: "escabeche", name: "Fish escabeche (sweet and sour fish)", style: "filipino", slots: "LD", min: 35, tags: "ulam kids keeps",
   ing: ["fish 800g | tilapia or lapu-lapu", "bell-pepper 1? | strips", "carrot 1 | strips", "ginger | 1 thumb, strips", "onion | 1", "garlic | 3 cloves", "vinegar | 1/3 cup", "sugar | 1/4 cup", "ketchup | 3 tbsp", "cornstarch | 1 tbsp", "salt", "oil | for frying", "water | 3/4 cup"],
   steps: [
     "Salt and fry the fish until crisp. Place on a platter.",
@@ -380,7 +380,7 @@ recipe({
   ],
 });
 recipe({
-  id: "adobong-pusit", name: "Adobong pusit", style: "filipino", slots: "LD", min: 30, tags: "ulam",
+  id: "adobong-pusit", name: "Adobong pusit", style: "filipino", slots: "LD", min: 30, tags: "ulam keeps",
   ing: ["squid 600g | cleaned, sliced", "vinegar | 1/4 cup", "soy-sauce | 2 tbsp", "tomato 2 | chopped", "onion | 1", "garlic | 5 cloves", "sugar? | 1 tsp", "pepper", "oil | 1 tbsp"],
   steps: [
     "Sauté garlic, onion and tomato.",
@@ -390,7 +390,7 @@ recipe({
   ],
 });
 recipe({
-  id: "calamares", name: "Calamares", style: "filipino", slots: "LD", min: 25, tags: "kids",
+  id: "calamares", name: "Calamares", style: "filipino", slots: "LD", min: 25, tags: "kids nokeep",
   ing: ["squid 500g | rings", "flour | 1 cup", "eggs 1", "cornstarch? | 1/4 cup", "salt", "pepper", "calamansi? | for serving", "oil | for frying"],
   steps: [
     "Season squid with salt and pepper.",
@@ -412,7 +412,7 @@ recipe({
 
 /* ---- Vegetables ---- */
 recipe({
-  id: "pinakbet", name: "Pinakbet", style: "filipino", slots: "LD", min: 35, tags: "ulam healthy",
+  id: "pinakbet", name: "Pinakbet", style: "filipino", slots: "LD", min: 35, tags: "ulam healthy keeps",
   ing: ["squash 300g | cubed", "eggplant 1 | sliced", "ampalaya 1? | sliced", "okra 6? | halved", "sitaw 1 | cut", "tomato 2 | chopped", "pork-belly 200g? | small pieces", "bagoong | 2 tbsp", "onion | 1", "garlic | 4 cloves", "water | 1/2 cup", "oil | 1 tbsp"],
   steps: [
     "Fry the pork until browned (skip if not using). Add garlic, onion and tomato.",
@@ -422,7 +422,7 @@ recipe({
   ],
 });
 recipe({
-  id: "ginataang-kalabasa", name: "Squash and string beans in coconut milk", style: "filipino", slots: "LD", min: 30, tags: "ulam healthy cheap",
+  id: "ginataang-kalabasa", name: "Squash and string beans in coconut milk", style: "filipino", slots: "LD", min: 30, tags: "ulam healthy cheap keeps",
   ing: ["squash 500g | cubed", "sitaw 1 | cut", "coconut-milk 400 | 1 can", "shrimp 200g? | or ground pork", "onion | 1", "garlic | 4 cloves", "bagoong? | 1 tbsp, or fish sauce", "oil | 1 tbsp"],
   steps: [
     "Sauté garlic and onion. Add the shrimp or pork if using and cook 2 minutes.",
@@ -452,7 +452,7 @@ recipe({
   ],
 });
 recipe({
-  id: "ginisang-monggo", name: "Ginisang monggo", style: "filipino", slots: "LD", min: 60, tags: "ulam soup cheap healthy comfort",
+  id: "ginisang-monggo", name: "Ginisang monggo", style: "filipino", slots: "LD", min: 60, tags: "ulam soup cheap healthy comfort keeps",
   ing: ["mung-beans 250g", "malunggay? | 1 cup, or ampalaya leaves or pechay", "tomato 2 | chopped", "pork-belly 150g? | or dried fish or chicharon", "onion | 1", "garlic | 5 cloves", "fish-sauce | 2 tbsp", "water | 6 cups", "oil | 1 tbsp"],
   steps: [
     "Boil the mung beans in the water for 40 minutes until soft and splitting.",
@@ -493,7 +493,7 @@ recipe({
   ],
 });
 recipe({
-  id: "adobong-kangkong", name: "Adobong kangkong", style: "filipino", slots: "LD", min: 15, tags: "ulam cheap healthy",
+  id: "adobong-kangkong", name: "Adobong kangkong", style: "filipino", slots: "LD", min: 15, tags: "ulam cheap healthy nokeep",
   ing: ["kangkong 2 | cut, stems and leaves separated", "garlic | 1 head, minced", "soy-sauce | 3 tbsp", "vinegar | 2 tbsp", "oyster-sauce? | 1 tbsp", "sugar? | 1 tsp", "pepper", "oil | 2 tbsp"],
   steps: [
     "Fry the garlic until golden. Scoop out half for topping.",
@@ -503,7 +503,7 @@ recipe({
   ],
 });
 recipe({
-  id: "adobong-sitaw", name: "Adobong sitaw", style: "filipino", slots: "LD", min: 25, tags: "ulam cheap",
+  id: "adobong-sitaw", name: "Adobong sitaw", style: "filipino", slots: "LD", min: 25, tags: "ulam cheap keeps",
   ing: ["sitaw 2 | cut into 2-inch pieces", "pork-belly 200g? | small pieces", "soy-sauce | 3 tbsp", "vinegar | 2 tbsp", "garlic | 5 cloves", "onion | 1", "pepper", "water | 1/2 cup", "oil | 1 tbsp"],
   steps: [
     "Brown the pork if using, then add garlic and onion.",
@@ -513,7 +513,7 @@ recipe({
   ],
 });
 recipe({
-  id: "ginisang-togue", name: "Ginisang togue", style: "filipino", slots: "LD", min: 15, tags: "ulam cheap healthy",
+  id: "ginisang-togue", name: "Ginisang togue", style: "filipino", slots: "LD", min: 15, tags: "ulam cheap healthy nokeep",
   ing: ["bean-sprouts 400g", "tofu 1? | cubed and fried", "carrot 1? | strips", "shrimp 150g? | or pork strips", "onion | 1", "garlic | 3 cloves", "fish-sauce | 1 tbsp", "oil | 1 tbsp", "pepper"],
   steps: [
     "Sauté garlic and onion. Cook the shrimp or pork through.",
@@ -552,7 +552,7 @@ recipe({
   ],
 });
 recipe({
-  id: "ginisang-pechay", name: "Garlic pechay in oyster sauce", style: "filipino", slots: "LD", min: 10, tags: "healthy cheap",
+  id: "ginisang-pechay", name: "Garlic pechay in oyster sauce", style: "filipino", slots: "LD", min: 10, tags: "healthy cheap nokeep",
   ing: ["pechay 2 | cut", "garlic | 6 cloves, minced", "oyster-sauce | 2 tbsp", "water | 2 tbsp", "oil | 1 tbsp"],
   steps: [
     "Fry the garlic in oil until golden.",

@@ -22,7 +22,7 @@ recipe({
   tip: "Add a splash of water if the sauce gets too thick.",
 });
 recipe({
-  id: "sardinas-misua", name: "Sardines with misua", style: "filipino", slots: "LD", min: 20, tags: "ulam soup cheap comfort",
+  id: "sardinas-misua", name: "Sardines with misua", style: "filipino", slots: "LD", min: 20, tags: "ulam soup cheap comfort nokeep",
   ing: ["sardines 2", "misua 1 | 1 bundle (about 100 g)", "onion | 1, sliced", "garlic | 4 cloves, minced", "pechay 1? | or any leafy green", "fish-sauce | to taste", "water | 4 cups", "oil | 1 tbsp", "pepper"],
   steps: [
     "Sauté garlic and onion in oil until soft.",
@@ -73,7 +73,7 @@ recipe({
   ],
 });
 recipe({
-  id: "sardines-pasta", name: "Spicy sardines pasta", style: "western", slots: "LD", min: 20, tags: "onepot cheap spicy",
+  id: "sardines-pasta", name: "Spicy sardines pasta", style: "western", slots: "LD", min: 20, tags: "onepot cheap spicy nokeep",
   ing: ["spaghetti 400g", "sardines 2 | in tomato sauce or oil", "garlic | 6 cloves, sliced", "chili-flakes? | 1 tsp", "calamansi? | 2, juiced", "cheese? | grated", "oil | 3 tbsp", "salt", "pepper"],
   steps: [
     "Cook the pasta in salted water until just tender. Save 1/2 cup of the pasta water, then drain.",
@@ -93,7 +93,7 @@ recipe({
   ],
 });
 recipe({
-  id: "sardinas-sotanghon", name: "Sardines sotanghon soup", style: "filipino", slots: "LD", min: 20, tags: "soup cheap comfort",
+  id: "sardinas-sotanghon", name: "Sardines sotanghon soup", style: "filipino", slots: "LD", min: 20, tags: "soup cheap comfort nokeep",
   ing: ["sardines 2", "sotanghon 1 | 1 bundle (about 100 g), soaked", "carrot 1? | cut into strips", "cabbage 0.25? | shredded", "onion | 1, sliced", "garlic | 4 cloves, minced", "fish-sauce | to taste", "water | 5 cups", "oil | 1 tbsp"],
   steps: [
     "Soak the sotanghon in water for 10 minutes, then drain.",
@@ -114,7 +114,7 @@ recipe({
   ],
 });
 recipe({
-  id: "corned-beef-potato", name: "Corned beef with potatoes", style: "filipino", slots: "BLD", min: 25, tags: "ulam kids comfort",
+  id: "corned-beef-potato", name: "Corned beef with potatoes", style: "filipino", slots: "BLD", min: 25, tags: "ulam kids comfort keeps",
   ing: ["corned-beef 1", "potato 2 | small cubes", "carrot 1? | small cubes", "onion | 1, chopped", "garlic | 3 cloves, minced", "water | 1/2 cup", "oil | 2 tbsp", "pepper"],
   steps: [
     "Fry the potato (and carrot) cubes in oil until lightly browned. Set aside.",
@@ -224,7 +224,7 @@ recipe({
   ],
 });
 recipe({
-  id: "meatloaf-guisado", name: "Meat loaf guisado with potatoes", style: "filipino", slots: "LD", min: 20, tags: "ulam cheap",
+  id: "meatloaf-guisado", name: "Meat loaf guisado with potatoes", style: "filipino", slots: "LD", min: 20, tags: "ulam cheap keeps",
   ing: ["meat-loaf 1 | cubed", "potato 2 | cubed", "tomato 1 | diced", "onion | 1, chopped", "garlic | 3 cloves, minced", "water | 1/2 cup", "oil | 2 tbsp", "pepper"],
   steps: [
     "Fry the potatoes until lightly golden and set aside.",
@@ -263,7 +263,7 @@ recipe({
   ],
 });
 recipe({
-  id: "pork-beans-giniling", name: "Pork and beans with ground meat", style: "filipino", slots: "LD", min: 25, tags: "ulam kids comfort",
+  id: "pork-beans-giniling", name: "Pork and beans with ground meat", style: "filipino", slots: "LD", min: 25, tags: "ulam kids comfort keeps",
   ing: ["pork-and-beans 2", "ground-pork 300g | or ground beef", "potato 1? | small cubes", "onion | 1, chopped", "garlic | 4 cloves, minced", "tomato-sauce 0.5? | 1/2 pack", "oil | 1 tbsp", "salt", "pepper"],
   steps: [
     "Sauté garlic and onion, then add the ground meat and cook until no longer pink.",
@@ -321,7 +321,7 @@ recipe({
   ],
 });
 recipe({
-  id: "tuna-aglio", name: "Tuna aglio olio", style: "western", slots: "LD", min: 20, tags: "onepot",
+  id: "tuna-aglio", name: "Tuna aglio olio", style: "western", slots: "LD", min: 20, tags: "onepot nokeep",
   ing: ["spaghetti 400g", "tuna 1 | in oil", "garlic | 8 cloves, sliced", "chili-flakes? | 1 tsp", "calamansi? | 2", "oil | 3 tbsp", "salt", "pepper"],
   steps: [
     "Cook the pasta in salted water. Save 1/2 cup of the water before draining.",
@@ -361,7 +361,7 @@ recipe({
   ],
 });
 recipe({
-  id: "cream-mushroom-chicken", name: "Chicken in creamy mushroom sauce", style: "western", slots: "LD", min: 35, tags: "ulam comfort kids",
+  id: "cream-mushroom-chicken", name: "Chicken in creamy mushroom sauce", style: "western", slots: "LD", min: 35, tags: "ulam comfort kids keeps",
   ing: ["chicken 700g | bite-size pieces", "cream-of-mushroom 1", "mushroom-can 1?", "evap-milk 185? | 1/2 can", "onion | 1, chopped", "garlic | 4 cloves, minced", "butter? | 1 tbsp", "salt", "pepper"],
   steps: [
     "Season the chicken and brown it in butter or oil.",
@@ -371,7 +371,7 @@ recipe({
   ],
 });
 recipe({
-  id: "chickpea-tomato-stew", name: "Chickpea and tomato stew", style: "western", slots: "LD", min: 25, tags: "healthy cheap onepot",
+  id: "chickpea-tomato-stew", name: "Chickpea and tomato stew", style: "western", slots: "LD", min: 25, tags: "healthy cheap onepot keeps",
   ing: ["chickpeas 2 | drained", "tomato-sauce 1 | 1 pack, or 4 chopped tomatoes", "potato 1? | cubed", "onion | 1, chopped", "garlic | 4 cloves, minced", "pechay 1? | chopped", "curry-powder? | 1 tsp", "oil | 2 tbsp", "salt", "pepper"],
   steps: [
     "Sauté onion and garlic in oil. Add curry powder if using and stir 30 seconds.",
