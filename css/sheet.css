@@ -1,0 +1,52 @@
+/* Bottom sheets */
+body.sheet-open { overflow: hidden; }
+.sheet-wrap {
+  position: fixed; inset: 0; z-index: 50;
+  display: flex; align-items: flex-end; justify-content: center;
+  background: rgb(0 0 0 / 0); transition: background .2s;
+}
+.sheet-wrap.in { background: rgb(0 0 0 / .45); }
+.sheet {
+  width: 100%; max-width: 640px; max-height: calc(100% - 24px - env(safe-area-inset-top, 0px));
+  display: flex; flex-direction: column;
+  background: var(--bg); color: var(--ink); border-radius: 18px 18px 0 0;
+  transform: translateY(24px); opacity: 0; transition: transform .22s ease-out, opacity .18s;
+  box-shadow: 0 -8px 30px rgb(0 0 0 / .2);
+}
+.sheet.wide { max-width: 720px; }
+.sheet-wrap.in .sheet { transform: none; opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .sheet, .sheet-wrap { transition: none; } }
+@media (min-width: 760px) {
+  .sheet-wrap { align-items: center; padding: 24px; }
+  .sheet { border-radius: 18px; max-height: calc(100% - 48px); }
+}
+.sheet-head {
+  position: relative; display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 14px 10px 6px 18px;
+}
+.grab { position: absolute; top: 6px; left: 50%; width: 40px; height: 4px; margin-left: -20px; border-radius: 2px; background: var(--line); }
+.sheet-title { margin: 0; font: 800 20px/1.2 var(--display); font-stretch: 85%; }
+.sheet-body {
+  overflow-y: auto; overscroll-behavior: contain;
+  padding: 4px 18px calc(20px + env(safe-area-inset-bottom, 0px));
+  display: flex; flex-direction: column; gap: 16px;
+}
+.sheet-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.sheet-actions.sticky {
+  position: sticky; bottom: calc(-20px - env(safe-area-inset-bottom, 0px));
+  margin-inline: -18px; padding: 12px 18px calc(12px + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(to bottom, transparent, var(--bg) 30%);
+}
+
+/* cooked sheet */
+.cooked-list { list-style: none; margin: 0; padding: 0; }
+.cooked-list li {
+  display: grid; grid-template-columns: minmax(0, 1fr) 130px; gap: 6px 12px; align-items: center;
+  padding: 10px 0; border-bottom: 1px solid var(--line);
+}
+.cl-name { display: flex; flex-direction: column; min-width: 0; }
+.cl-name small { color: var(--muted); font-size: 13px; }
+.cl-after { display: flex; flex-direction: column; gap: 3px; }
+.cooked-list .check-row { grid-column: 1 / -1; padding: 0; }
+.field-input.small { padding: 8px 10px; font-size: 15px; }
+.field-input:disabled { opacity: .5; }

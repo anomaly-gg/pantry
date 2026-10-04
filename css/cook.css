@@ -1,0 +1,67 @@
+/* Cook tab + recipe cards (also used in the swap sheet) */
+.search-wrap { position: relative; }
+.search-wrap .ico { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.search-wrap .search { padding-left: 40px; }
+
+.cook-results { display: flex; flex-direction: column; gap: 22px; }
+.cook-group { display: flex; flex-direction: column; gap: 10px; }
+
+.unlock { padding: 14px 16px; border-radius: var(--r); background: var(--mustard-soft); display: flex; flex-direction: column; gap: 10px; }
+.unlock .label { color: var(--ink); }
+.unlock-chip { display: inline-flex; align-items: center; gap: 6px; border-color: var(--mustard); }
+.unlock-chip b { color: var(--mustard); font-size: 13px; }
+
+.rcards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 10px; }
+.rcard {
+  display: flex; flex-direction: column; align-items: stretch; gap: 4px; text-align: left; min-width: 0;
+  padding: 14px 16px; border-radius: var(--r); border: 1px solid var(--line); background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.rcard:hover { border-color: var(--accent); }
+.rcard-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.rcard-name { font: 800 18px/1.2 var(--display); font-stretch: 88%; min-width: 0; overflow-wrap: anywhere; }
+.rcard-meta { flex: none; display: inline-flex; align-items: center; gap: 4px; font-size: 13px; color: var(--muted); padding-top: 2px; }
+.rcard-sub { font-size: 13px; color: var(--muted); }
+.rcard-need, .rcard-ready, .rcard-soon { display: flex; align-items: flex-start; gap: 6px; font-size: 14px; margin-top: 4px; }
+.rcard-need .ico, .rcard-ready .ico, .rcard-soon .ico { flex: none; margin-top: 3px; }
+.rcard-need { color: var(--mustard); font-weight: 600; }
+.rcard-ready { color: var(--ok); font-weight: 600; }
+.rcard-soon { color: var(--muted); font-size: 13px; margin-top: 0; }
+.rcard-soon .ico { color: var(--mustard); }
+
+.ai-card {
+  display: flex; gap: 14px; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  padding: 16px; border-radius: var(--r); border: 1px dashed var(--line);
+}
+.ai-card > div { flex: 1 1 240px; }
+.ai-card p { margin-top: 4px; }
+
+/* recipe sheet */
+.recipe-head { display: flex; flex-direction: column; gap: 10px; }
+.recipe-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; color: var(--muted); font-size: 14px; }
+.recipe-meta > span { display: inline-flex; align-items: center; gap: 5px; }
+.recipe-meta .serves { margin-left: auto; color: var(--ink); }
+.recipe-status { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 12px 14px; border-radius: 10px; font-size: 15px; }
+.recipe-status.ok { background: var(--accent-soft); justify-content: flex-start; font-weight: 600; }
+.recipe-status.ok .ico { color: var(--ok); }
+.recipe-status.need { background: var(--mustard-soft); }
+.recipe-sec { display: flex; flex-direction: column; gap: 8px; }
+.recipe-sec h3 { margin: 0; }
+.ing-list { list-style: none; margin: 0; padding: 0; }
+.ing-list li { display: flex; gap: 10px; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.ing-list .mark { flex: none; width: 18px; display: inline-grid; place-items: center; color: var(--muted); }
+.ing-list .have .mark { color: var(--ok); }
+.ing-list .need .mark { color: var(--mustard); }
+.ing-list .need { font-weight: 600; }
+.ing-list .opt { color: var(--muted); }
+.steps { margin: 0; padding: 0; list-style: none; counter-reset: step; display: flex; flex-direction: column; gap: 12px; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 30px 1fr; gap: 8px; line-height: 1.55; }
+.steps li::before {
+  content: counter(step); width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--accent); color: var(--accent-ink); font: 800 14px/1 var(--display);
+}
+.tip { margin: 0; padding: 10px 12px; border-left: 3px solid var(--mustard); background: var(--sunk); border-radius: 0 8px 8px 0; font-size: 15px; }
+
+.stepper { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.stepper button { width: 40px; height: 40px; border: 0; background: none; font-size: 20px; line-height: 1; color: var(--ink); }
+.stepper output { min-width: 30px; text-align: center; font-weight: 700; }

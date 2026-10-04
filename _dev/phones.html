@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Pantry Chef — phone preview (dev only)</title>
+<style>
+  body { margin: 0; padding: 16px; background: #555; display: flex; gap: 16px; font: 13px system-ui; color: #fff; }
+  figure { margin: 0; }
+  iframe { width: 390px; height: 760px; border: 0; border-radius: 18px; background: #fff; }
+</style>
+<!-- Same origin as the app, so the frames share its saved data. ?tabs=pantry,cook picks the screens. -->
+<script>
+  const tabs = (new URLSearchParams(location.search).get("tabs") || "pantry,cook,week").split(",");
+  for (const t of tabs) {
+    document.write('<figure><figcaption>' + t + '</figcaption><iframe src="../index.html#' + t + '" data-tab="' + t + '"></iframe></figure>');
+  }
+  // each frame switches to its tab once its own scripts have run
+  for (const f of document.querySelectorAll("iframe")) f.addEventListener("load", () => {
+    const go = () => { try { f.contentWindow.setTab(f.dataset.tab); } catch (e) { setTimeout(go, 200); } };
+    go();
+  });
+</script>

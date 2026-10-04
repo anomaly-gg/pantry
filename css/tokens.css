@@ -1,0 +1,63 @@
+/* Look: a pantry-shelf label. Sage-grey ground, sardine-tin teal for actions, mustard for "use soon" and
+   things to buy. Archivo (narrowed) for labels and headings, Figtree for reading. Follows the phone's
+   light/dark setting. */
+
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 500 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url(../fonts/archivo.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(../fonts/figtree.woff2) format("woff2");
+}
+
+:root {
+  --bg: #edf1ed;
+  --surface: #ffffff;
+  --sunk: #e1e8e3;
+  --ink: #17201b;
+  --muted: #56645d;
+  --line: #d0d9d3;
+  --accent: #0d6b5a;
+  --accent-ink: #ffffff;
+  --accent-soft: #d3eae2;
+  --mustard: #a96f00;
+  --mustard-soft: #fbecc5;
+  --danger: #b3261e;
+  --ok: #1f7a3d;
+  --shadow: 0 1px 2px rgb(20 40 30 / .06), 0 4px 16px rgb(20 40 30 / .06);
+
+  --display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --r: 12px;
+  --tabbar-h: 62px;
+  --top-h: 52px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101513;
+    --surface: #19201d;
+    --sunk: #222b27;
+    --ink: #e5ece7;
+    --muted: #97a69f;
+    --line: #2b3531;
+    --accent: #4fc4a8;
+    --accent-ink: #08130f;
+    --accent-soft: #163a30;
+    --mustard: #f0b93a;
+    --mustard-soft: #3a2d0f;
+    --danger: #ff8a80;
+    --ok: #6fd58f;
+    --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 4px 16px rgb(0 0 0 / .25);
+    color-scheme: dark;
+  }
+}

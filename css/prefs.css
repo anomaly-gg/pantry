@@ -1,0 +1,14 @@
+/* Preferences sheet */
+.pref { display: flex; flex-direction: column; gap: 8px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg label {
+  display: inline-flex; align-items: center; gap: 7px; padding: 9px 13px; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-size: 15px;
+}
+.seg label:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); font-weight: 650; }
+.seg input { margin: 0; accent-color: var(--accent); width: 17px; height: 17px; }
+.join { display: flex; gap: 8px; }
+.join input { flex: 1; text-transform: uppercase; letter-spacing: .05em; }
+.code-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.sync-code { font: 700 17px/1.2 ui-monospace, Consolas, monospace; letter-spacing: .04em; padding: 8px 12px; border-radius: 8px; background: var(--sunk); overflow-wrap: anywhere; }
+.about { padding-top: 4px; }
